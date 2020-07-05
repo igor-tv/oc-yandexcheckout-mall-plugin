@@ -1,0 +1,6 @@
+{
+    "require": {
+        "league/omnipay": "^3",
+        "hiqdev/omnipay-yandex-kassa": "^3.0"
+    }
+}

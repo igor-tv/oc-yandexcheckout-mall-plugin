@@ -1,0 +1,6 @@
+plugin:
+    name: 'iweb.yandexcheckoutmall::lang.plugin.name'
+    description: 'iweb.yandexcheckoutmall::lang.plugin.description'
+    author: Igor Tverdochleb, igor-tv@mail.ru
+    icon: oc-icon-credit-card
+    homepage: ''
