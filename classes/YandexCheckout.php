@@ -34,7 +34,7 @@ class YandexCheckout extends PaymentProvider
      */
     public function name(): string
     {
-        return Lang::get('iweb.yandexcheckoutmall::settings.yandex_checkout');
+        return Lang::get('iweb.yandexcheckoutmall::lang.settings.yandex_checkout');
     }
 
     /**
@@ -79,7 +79,7 @@ class YandexCheckout extends PaymentProvider
                 'returnUrl'     => $this->returnUrl(),
                 'cancelUrl'     => $this->cancelUrl(),
                 'transactionId' => uniqid('', true),
-                'description'   => Lang::get('iweb.yandexcheckoutmall::messages.order_number').$this->order->order_number,
+                'description'   => Lang::get('iweb.yandexcheckoutmall::lang.messages.order_number').$this->order->order_number,
                 'metadata'      => array(
                 'order_id'      => $this->order->id,
                 ),
@@ -206,31 +206,31 @@ class YandexCheckout extends PaymentProvider
     {
         return [
             'shopId'     => [
-                'label'   => Lang::get('iweb.yandexcheckoutmall::settings.shop_id'),
-                'comment' => Lang::get('iweb.yandexcheckoutmall::settings.shop_id_label'),
+                'label'   => Lang::get('iweb.yandexcheckoutmall::lang.settings.shop_id'),
+                'comment' => Lang::get('iweb.yandexcheckoutmall::lang.settings.shop_id_label'),
                 'span'    => 'left',
                 'type'    => 'text',
             ],
             'api_key' => [
-                'label'   => Lang::get('iweb.yandexcheckoutmall::settings.secret_key'),
-                'comment' => Lang::get('iweb.yandexcheckoutmall::settings.secret_key_label'),
+                'label'   => Lang::get('iweb.yandexcheckoutmall::lang.settings.secret_key'),
+                'comment' => Lang::get('iweb.yandexcheckoutmall::lang.settings.secret_key_label'),
                 'span'    => 'left',
                 'type'    => 'text',
             ],
             'events_url_endpoint' => [
-                'label'   => Lang::get('iweb.yandexcheckoutmall::settings.url_for_notifications'),
-                'comment' => Lang::get('iweb.yandexcheckoutmall::settings.url_for_notifications_label'),
+                'label'   => Lang::get('iweb.yandexcheckoutmall::lang.settings.url_for_notifications'),
+                'comment' => Lang::get('iweb.yandexcheckoutmall::lang.settings.url_for_notifications_label'),
                 'span'    => 'left',
                 'type'    => 'text',
             ],
             'ordersPage' => [
-                'label'   => Lang::get('iweb.yandexcheckoutmall::settings.orders_page_url'),
-                'comment' => Lang::get('iweb.yandexcheckoutmall::settings.orders_page_url_label'),
+                'label'   => Lang::get('iweb.yandexcheckoutmall::lang.settings.orders_page_url'),
+                'comment' => Lang::get('iweb.yandexcheckoutmall::lang.settings.orders_page_url_label'),
                 'span'    => 'left',
                 'type'    => 'text',
             ],
             'setPayedVirtualOrderAsComplete' => [
-                'label'   => Lang::get('iweb.yandexcheckoutmall::settings.set_payed_virtual_order_as_complete'),
+                'label'   => Lang::get('iweb.yandexcheckoutmall::lang.settings.set_payed_virtual_order_as_complete'),
                 'span'    => 'left',
                 'type'    => 'checkbox',
             ],
