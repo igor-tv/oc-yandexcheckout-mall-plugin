@@ -11,6 +11,7 @@
         'secret_key_label' => 'API secret key',
         'orders_page_url' => 'URL of frontend orders page',
         'orders_page_url_label' => 'Example: http://site.tld/account/orders',
+        'endpoint_url_label' => 'URL for sending notifications from Yandex Checkout',
         'set_payed_virtual_order_as_complete' => 'Change the status of paid virtual orders to "Done"',
     ],
     'messages' => [

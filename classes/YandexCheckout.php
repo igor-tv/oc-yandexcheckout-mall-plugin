@@ -205,6 +205,12 @@ class YandexCheckout extends PaymentProvider
     public function settings(): array
     {
         return [
+            'endpointUrl' => [
+                'label'   => '',
+                'span'    => 'left',
+                'type'    => 'partial',
+                'path'    => '$/iweb/yandexcheckoutmall/view/_endpoint_url.htm'
+            ],
             'shopId'     => [
                 'label'   => Lang::get('iweb.yandexcheckoutmall::lang.settings.shop_id'),
                 'comment' => Lang::get('iweb.yandexcheckoutmall::lang.settings.shop_id_label'),

@@ -2,3 +2,5 @@
     - Initialize plugin.
 1.0.2:
     - Fixed error updating payment status. Исправлена ошибка обновления статуса платежа.
+1.0.3:
+    - Added endpoint url for notifications in settings. Добавлен вывод url для уведомлений в настройках.
