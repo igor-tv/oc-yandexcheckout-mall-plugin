@@ -222,6 +222,7 @@ class YandexCheckout extends PaymentProvider
                 'comment' => Lang::get('iweb.yandexcheckoutmall::lang.settings.url_for_notifications_label'),
                 'span'    => 'left',
                 'type'    => 'text',
+                'default' => '/yandex-checkout',
             ],
             'ordersPage' => [
                 'label'   => Lang::get('iweb.yandexcheckoutmall::lang.settings.orders_page_url'),

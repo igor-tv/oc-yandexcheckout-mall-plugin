@@ -1,13 +1,14 @@
 <?php
 
 use Illuminate\Http\Request;
+use OFFLINE\Mall\Models\PaymentGatewaySettings;
 use Iweb\YandexCheckoutMall\Classes\YandexCheckout;
 
-Route::post('/yandex-checkout', function (Request $request) {
+Route::post(PaymentGatewaySettings::get('events_url_endpoint'), function (Request $request) {
 
-    $yandexKassa = new YandexCheckout;
+    $yandexCheckout = new YandexCheckout;
 
-    $yandexKassa->changePaymentState($request);
+    $yandexCheckout->changePaymentState($request);
 
     return exit();
 });
