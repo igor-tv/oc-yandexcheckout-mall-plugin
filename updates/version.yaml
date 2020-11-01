@@ -4,3 +4,5 @@
     - Fixed error updating payment status. Исправлена ошибка обновления статуса платежа.
 1.0.3:
     - Added endpoint url for notifications in settings. Добавлен вывод url для уведомлений в настройках.
+1.0.4:
+    - Fixed change of payment status. Исправлено изменение статуса платежа.
