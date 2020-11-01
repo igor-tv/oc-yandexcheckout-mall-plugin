@@ -144,40 +144,34 @@ class YandexCheckout extends PaymentProvider
 
         switch ($responseAll['event']){
             case 'payment.succeeded':
+                $result->success($data, $response);
+
                 if ($order->is_virtual === 1 and PaymentGatewaySettings::get('setPayedVirtualOrderAsComplete')) {
                     $order->order_state_id = $this->getOrderStateId(OrderState::FLAG_COMPLETE);
                     $order->save();
                 }
 
-                try {
-                    \Event::fire('mall.checkout.succeeded', $result);
-                } catch (Throwable $e) {
-                    return null;
-                }
-
-                return $result->success($data, $response);
+                \Event::fire('mall.checkout.succeeded', $result);
                 break;
             case 'payment.canceled':
+                $result->fail($data, $response);
                 $order->order_state_id = $this->getOrderStateId(OrderState::FLAG_CANCELLED);
                 $order->save();
 
-                return $result->fail($data, $response);
                 break;
             case 'refund.succeeded':
+                $result->pending();
                 $order->order_state_id = $this->getOrderStateId(OrderState::FLAG_COMPLETE);
                 $order->save();
-
-                return $result->pending();
                 break;
             case 'payment.waiting_for_capture':
                 // not used
-                return $result->pending();
-                break;
+                $result->pending();
             default:
+                \Event::fire('mall.checkout.failed', $result);
                 return $result->fail($data, $response);
         }
     }
-
 
     /**
      * Build the Omnipay Gateway for PayPal.
